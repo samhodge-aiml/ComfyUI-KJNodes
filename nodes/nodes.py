@@ -6,8 +6,8 @@ import json, re, os, io, time, platform
 import re
 import importlib
 
-import model_management
-import folder_paths
+from comfy import model_management as model_management
+from comfy.cmd import folder_paths as folder_paths
 from nodes import MAX_RESOLUTION
 from comfy.utils import common_upscale, ProgressBar
 

@@ -4,7 +4,7 @@ import comfy.model_patcher
 import comfy.utils
 import comfy.sd
 import torch
-import folder_paths
+from comfy.cmd import folder_paths as folder_paths
 import comfy.model_management as mm
 from comfy.cli_args import args
 

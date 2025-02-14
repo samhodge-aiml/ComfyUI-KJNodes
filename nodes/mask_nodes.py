@@ -7,12 +7,12 @@ import numpy as np
 from contextlib import nullcontext
 import os
 
-import model_management
+from comfy import model_management as model_management
 from comfy.utils import ProgressBar
 from comfy.utils import common_upscale
 from nodes import MAX_RESOLUTION
 
-import folder_paths
+from comfy.cmd import folder_paths as folder_paths
 
 from ..utility.utility import tensor2pil, pil2tensor
 
