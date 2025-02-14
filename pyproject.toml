@@ -36,4 +36,4 @@ packages = [
 "*" = ["**/*.js", "**/*.json", "**/*.ttf", "**/*.otf", "**/*.png"]
 
 [project.entry-points."comfyui.custom_nodes"]
-ComfyUI_pythongosssss_nodes = "ComfyUI_pythongosssss_nodes"
+ComfyUI_KJNodes_nodes = "ComfyUI_KJNodes_nodes"
