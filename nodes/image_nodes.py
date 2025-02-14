@@ -18,7 +18,8 @@ except:
     pass
 from PIL import ImageGrab, ImageDraw, ImageFont, Image, ImageSequence, ImageOps
 
-from nodes import MAX_RESOLUTION, SaveImage
+from comfy.nodes.common import MAX_RESOLUTION as MAX_RESOLUTION
+from comfy.nodes.base_nodes import SaveImage as SaveImage
 from comfy_extras.nodes_mask import ImageCompositeMasked
 from comfy.cli_args import args
 from comfy.utils import ProgressBar, common_upscale

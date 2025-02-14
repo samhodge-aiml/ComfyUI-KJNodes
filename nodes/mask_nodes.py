@@ -10,7 +10,7 @@ import os
 from comfy import model_management as model_management
 from comfy.utils import ProgressBar
 from comfy.utils import common_upscale
-from nodes import MAX_RESOLUTION
+from comfy.nodes.common import MAX_RESOLUTION
 
 from comfy.cmd import folder_paths as folder_paths
 
