@@ -20,7 +20,7 @@ from PIL import ImageGrab, ImageDraw, ImageFont, Image, ImageSequence, ImageOps
 
 from comfy.nodes.common import MAX_RESOLUTION as MAX_RESOLUTION
 from comfy.nodes.base_nodes import SaveImage as SaveImage
-from comfy.comfy_extras.nodes.nodes_mask import ImageCompositeMasked as ImageCompositeMasked
+from comfy_extras.nodes.nodes_mask import ImageCompositeMasked as ImageCompositeMasked
 from comfy.cli_args import args
 from comfy.utils import ProgressBar, common_upscale
 from comfy.cmd import folder_paths as folder_paths
