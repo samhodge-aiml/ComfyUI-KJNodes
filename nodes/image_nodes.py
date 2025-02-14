@@ -1846,7 +1846,7 @@ with the **inputcount** and clicking update.
 """
 
     def combine(self, inputcount, **kwargs):
-        from nodes import ImageBatch
+        from comfy.nodes.base_nodes import ImageBatch as ImageBatch
         image_batch_node = ImageBatch()
         image = kwargs["image_1"]
         for c in range(1, inputcount):

@@ -156,7 +156,7 @@ class CheckpointLoaderKJ(BaseLoaderKJ):
 
     def patch(self, ckpt_name, patch_cublaslinear, sage_attention):
         self._patch_modules(patch_cublaslinear, sage_attention)
-        from nodes import CheckpointLoaderSimple
+        from comfy.nodes.base_nodes import CheckpointLoaderSimple
         model, clip, vae = CheckpointLoaderSimple.load_checkpoint(self, ckpt_name)
         return model, clip, vae
 
@@ -178,7 +178,7 @@ class DiffusionModelLoaderKJ(BaseLoaderKJ):
     CATEGORY = "KJNodes/experimental"
 
     def patch_and_load(self, ckpt_name, weight_dtype, patch_cublaslinear, sage_attention):        
-        from nodes import UNETLoader
+        from comfy.nodes.base_nodes import UNETLoader
         model, = UNETLoader.load_unet(self, ckpt_name, weight_dtype)
         self._patch_modules(patch_cublaslinear, sage_attention)
         return (model,)
