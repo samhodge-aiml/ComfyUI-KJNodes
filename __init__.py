@@ -197,7 +197,7 @@ __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS", "WEB_DIRECTORY"]
 WEB_DIRECTORY = "./web"
 
 from aiohttp import web
-from server import PromptServer
+from comfy.cmd.server import PromptServer as PromptServer
 from pathlib import Path
 
 if hasattr(PromptServer, "instance"):
