@@ -1,10 +1,10 @@
-import folder_paths
+from comfy.cmd import folder_paths as folder_paths
 import os
 import torch
 import torch.nn.functional as F
 from comfy.utils import ProgressBar, load_torch_file
 import comfy.sample
-from nodes import CLIPTextEncode
+from comfy.nodes.base_nodes import CLIPTextEncode
 
 script_directory = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 folder_paths.add_model_folder_path("intrinsic_loras", os.path.join(script_directory, "intrinsic_loras"))

@@ -6,9 +6,9 @@ import json, re, os, io, time, platform
 import re
 import importlib
 
-import model_management
-import folder_paths
-from nodes import MAX_RESOLUTION
+from comfy import model_management as model_management
+from comfy.cmd import folder_paths as folder_paths
+from comfy.nodes.common import MAX_RESOLUTION as MAX_RESOLUTION
 from comfy.utils import common_upscale, ProgressBar
 
 script_directory = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -214,8 +214,8 @@ Combines multiple conditioning nodes into one
 """
 
     def combine(self, inputcount, operation, **kwargs):
-        from nodes import ConditioningCombine
-        from nodes import ConditioningConcat
+        from comfy.nodes.base_nodes import ConditioningCombine
+        from comfy.nodes.base_nodes import ConditioningConcat
         cond_combine_node = ConditioningCombine()
         cond_concat_node = ConditioningConcat()
         cond = kwargs["conditioning_1"]
@@ -741,7 +741,7 @@ class EmptyLatentImagePresets:
     CATEGORY = "KJNodes/latents"
 
     def generate(self, dimensions, invert, batch_size):
-        from nodes import EmptyLatentImage
+        from comfy.nodes.base_nodes import EmptyLatentImage
         result = [x.strip() for x in dimensions.split('x')]
 
         # Remove the aspect ratio part
@@ -791,7 +791,7 @@ The choices are loaded from 'custom_dimensions.json' in the nodes folder.
 """
 
     def generate(self, dimensions, invert, batch_size):
-       from nodes import EmptyLatentImage
+       from comfy.nodes.base_nodes import EmptyLatentImage
        # Split the string into label and value
        label, value = dimensions.split(' - ')
        # Split the value into width and height

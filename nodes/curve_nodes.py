@@ -4,7 +4,7 @@ import json
 from PIL import Image, ImageDraw, ImageFont, ImageColor, ImageFilter, ImageChops
 import numpy as np
 from ..utility.utility import pil2tensor, tensor2pil
-import folder_paths
+from comfy.cmd import folder_paths as folder_paths
 import io
 import base64
         

@@ -18,12 +18,13 @@ except:
     pass
 from PIL import ImageGrab, ImageDraw, ImageFont, Image, ImageSequence, ImageOps
 
-from nodes import MAX_RESOLUTION, SaveImage
-from comfy_extras.nodes_mask import ImageCompositeMasked
+from comfy.nodes.common import MAX_RESOLUTION as MAX_RESOLUTION
+from comfy.nodes.base_nodes import SaveImage as SaveImage
+from comfy_extras.nodes.nodes_mask import ImageCompositeMasked as ImageCompositeMasked
 from comfy.cli_args import args
 from comfy.utils import ProgressBar, common_upscale
-import folder_paths
-import model_management
+from comfy.cmd import folder_paths as folder_paths
+from comfy import model_management as model_management
 
 script_directory = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -1845,7 +1846,7 @@ with the **inputcount** and clicking update.
 """
 
     def combine(self, inputcount, **kwargs):
-        from nodes import ImageBatch
+        from comfy.nodes.base_nodes import ImageBatch as ImageBatch
         image_batch_node = ImageBatch()
         image = kwargs["image_1"]
         for c in range(1, inputcount):

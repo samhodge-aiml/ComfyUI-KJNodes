@@ -13,3 +13,27 @@ Repository = "https://github.com/kijai/ComfyUI-KJNodes"
 PublisherId = "kijai"
 DisplayName = "ComfyUI-KJNodes"
 Icon = ""
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = [ 
+    "ComfyUI_KJNodes_nodes", 
+    "ComfyUI_KJNodes_nodes.intrinsic_loras",
+    "ComfyUI_KJNodes_nodes.nodes",
+    "ComfyUI_KJNodes_nodes.utility",
+]
+
+[tool.setuptools.package-dir]
+"ComfyUI_KJNodes_nodes" = "."
+"ComfyUI_KJNodes_nodes.intrinsic_loras" = "intrinsic_loras"
+"ComfyUI_KJNodes_nodes.nodes" = "nodes"
+"ComfyUI_KJNodes_nodes.utility" = "utility"
+
+[tool.setuptools.package-data]
+"*" = ["**/*.js", "**/*.json", "**/*.ttf", "**/*.otf", "**/*.png"]
+
+[project.entry-points."comfyui.custom_nodes"]
+ComfyUI_KJNodes_nodes = "ComfyUI_KJNodes_nodes"
