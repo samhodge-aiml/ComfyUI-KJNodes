@@ -8,7 +8,7 @@ import importlib
 
 from comfy import model_management as model_management
 from comfy.cmd import folder_paths as folder_paths
-from nodes import MAX_RESOLUTION
+from comfy.nodes.common import MAX_RESOLUTION as MAX_RESOLUTION
 from comfy.utils import common_upscale, ProgressBar
 
 script_directory = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
